@@ -9,6 +9,7 @@ import {
   Routes,
   //Link
 } from "react-router-dom";
+import Navbar from './components/Navbar';
 // import Landing from './components/Landing';
 // import Navbar from './components/Navbar';
 
@@ -25,6 +26,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/register' element={<Register/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/navbar' element={<Navbar></Navbar>}/>
       </Routes>
     </Router>
   )
