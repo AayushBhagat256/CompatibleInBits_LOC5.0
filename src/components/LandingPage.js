@@ -1,11 +1,13 @@
 import React from 'react'
 import '../styles/Landing.css'
 import Image from '../images/homepagepng.png'
+import Navbar from './Navbar'
 
 function LandingPage() {
   return (
     <div>
       {/* <h1>This is a landing page</h1> */}
+      <Navbar/>
       <div className="landingContainer">
         <div className="imageContainer"><img src={Image} alt="" srcset=""/></div>
         <div className="messageContainer">

@@ -24,6 +24,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Landing/>}/>
       </Routes> */}
+      {/* <Navbar/> */}
       <Routes>
         <Route path='/homepage' element={<LandingPage/>} />
       </Routes>
