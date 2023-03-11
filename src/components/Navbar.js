@@ -6,6 +6,12 @@ import { useState } from 'react';
 export default function Navbar() {
 
     const [isDisabled, setIsDisabled] = useState(true);
+    useEffect(() => {
+        if(localStorage.getItem('access'))
+        {
+            setIsDisabled(false);
+        }
+      }, []);
     return (
         <>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">

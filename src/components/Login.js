@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+//  import axios from 'axios'
+import Axios from "axios";
+import { async } from 'q';
 
 function Login() {
   document.title='LoginPage'
+  const [login,setLogin] = useState(false)
+  const navilink = useNavigate()
   const [email,setEmail]=useState('')
   const [pass,setPass]=useState('')
   function myFunction(e) {
@@ -28,11 +33,40 @@ function Login() {
     return err
   }
 
-  const submitform=(e)=>{
+  const submitform=async(e)=>{
+    console.log(email,pass)
     e.preventDefault()
     const error = validate()
     if(error===false){
       console.log("Submit success")
+
+      // var Axios = require('axios');
+      try {
+        const response = await fetch('//127.0.0.1:8000/account/login/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: email,
+            password: pass
+          })
+        });
+        const data = await response.json();
+        console.log(data);
+        alert('success')
+        localStorage.setItem('access',data.access)
+        localStorage.setItem('refresh',data.refresh)
+        setLogin(true)
+        navilink('/homepage')
+        
+      } catch (error) {
+        console.error(error);
+        alert("failed")
+      }
+  
+     
+
     }
     else{
       console.log("Submit not success")
