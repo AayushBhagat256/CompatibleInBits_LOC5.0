@@ -47,6 +47,10 @@ class domain(models.Model):
     domain_title = models.CharField(choices=Domain_Choices, blank=True, max_length=150)
     price = models.IntegerField(blank=True)
 
+class reviews(models.Model):
+    user = models.ForeignKey(UserProfile, default=None, on_delete=models.CASCADE)
+    review = models.TextField(blank=True)
+
 # class CodeEmail(models.Model):
 #     code = models.IntegerField()
 #     email = models.EmailField(max_length=254)

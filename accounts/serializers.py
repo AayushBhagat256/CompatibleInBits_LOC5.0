@@ -16,6 +16,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         profile = UserProfile(
             email=self.validated_data['email'],
             username=self.validated_data['username'],
+            is_photographer=self.validated_data['is_photographer'],
         )
         password = self.validated_data['password']
         password2 = self.validated_data['password2']
@@ -83,3 +84,17 @@ class Image_serializer(serializers.ModelSerializer):
 #     class Meta(object):
 #         model = domain
 #         fields = ['domain_title','price']
+
+class Review_serializer(serializers.ModelSerializer):
+    class Meta(object):
+        model = reviews
+        fields = ['review']
+    
+    def save(self, request):
+        user_email = request.user.email
+        image_inst = reviews(
+            user=UserProfile.objects.get(email=user_email),
+            review=self.validated_data['review'],
+        )
+        image_inst.save()
+        return image_inst

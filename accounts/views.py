@@ -113,3 +113,27 @@ class ParticularDomainView(GenericAPIView):
             userlist.append(UserProfile.objects.get(email=inst.user))
         serializer = UserSerializer(userlist, many=True)
         return Response(serializer.data, status=status.HTTP_302_FOUND)
+    
+class Reviewview(GenericAPIView):
+    permission_classes=[IsAuthenticated]
+    serializer_class = Review_serializer
+    parser_classes = (FormParser, MultiPartParser)
+
+    def get_object(self, request):
+        user_email=request.user.email
+        user=UserProfile.objects.get(email=user_email)
+        return reviews.objects.filter(user__email=user_email)
+    
+    def get(self, request):
+        reviews = self.get_object(request)
+        serializer = Review_serializer(reviews, many=True)
+        return Response(serializer.data, status=status.HTTP_302_FOUND)
+    
+    def put(self, request, *args, **kwargs):
+        serializer_data = request.data
+        serializer = Review_serializer(request.user, data=serializer_data, partial=True)
+        if serializer.is_valid(raise_exception=True):
+            inst = serializer.save(request)
+            serializer_inst = Review_serializer(inst)
+            return Response(serializer_inst.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
