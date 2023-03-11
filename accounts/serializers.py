@@ -60,3 +60,20 @@ class Domain_serializer(serializers.ModelSerializer):
         )
         domain_inst.save()
         return domain_inst
+    
+class Image_serializer(serializers.ModelSerializer):
+    
+    class Meta(object):
+        model = multi_image
+        fields = ['image']
+        # fields = '__all__'
+
+    def save(self, request):
+        user_email = request.user.email
+        # print(user_email,self.validated_data['image'])
+        image_inst = multi_image(
+            user=UserProfile.objects.get(email=user_email),
+            image=self.validated_data['image'],
+        )
+        image_inst.save()
+        return image_inst
