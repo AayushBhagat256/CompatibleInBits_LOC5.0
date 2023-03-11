@@ -20,6 +20,8 @@ import Photodomain from './components/Photodomain';
 import CustomerPanel from './components/CustomerPanel';
 import FilteredList from './components/CustomerPanel';
 import Courses from './components/Courses';
+import Vr from './components/Vr';
+import PanoramaViewer from './components/Vr';
 
 
 // import Landing from './components/Landing';
@@ -34,6 +36,9 @@ function App() {
         <Route path='/' element={<Landing/>}/>
       </Routes> */}
       {/* <Navbar/> */}
+      <Routes>
+        <Route path='/vr' element={<Vr/>}/>
+      </Routes>
       <Routes>
         <Route path='/courses' element={<Courses/>}/>
       </Routes>
