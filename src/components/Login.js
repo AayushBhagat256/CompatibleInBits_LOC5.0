@@ -54,11 +54,19 @@ function Login() {
         });
         const data = await response.json();
         console.log(data);
-        alert('success')
         localStorage.setItem('access',data.access)
         localStorage.setItem('refresh',data.refresh)
         setLogin(true)
-        navilink('/homepage')
+        console.log(localStorage.getItem("photo"))
+        if(localStorage.getItem("photo")=='true')
+        {
+          navilink('/pdomain');
+        }
+        else{
+          navilink('/homepage');
+        }
+        
+
         
       } catch (error) {
         console.error(error);

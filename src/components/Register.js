@@ -111,7 +111,9 @@ function Register() {
                 console.log(JSON.stringify(response.data));
                 if(photo==true)
                 {
-                    nav('/pdomain')
+                    localStorage.setItem("photo",'true');
+                    nav('/login')
+                    
                 }
             })
             .catch(function (error) {
