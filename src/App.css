@@ -154,3 +154,31 @@
    font-size: 20px;
    padding:10px;
 }
+.passwords2{
+  display: flex;
+  justify-content: space-around;
+}
+.passwords3{
+  display: flex;
+  justify-content: space-around;
+}
+.passwords2 button{
+  background-color: pink;
+  /* margin-left: -17px; */
+  /* width: 100%; */
+  padding:10px 15px;
+  font-size: 17px;
+  margin:8px 0;
+  /* background: #eee; */
+  border-radius: 5px;
+}
+.passwords3 button{
+  background-color: pink;
+  /* margin-left: -17px; */
+  /* width: 100%; */
+  padding:10px 15px;
+  font-size: 17px;
+  margin:8px 0;
+  /* background: #eee; */
+  border-radius: 5px;
+}
