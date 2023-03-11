@@ -87,8 +87,8 @@ function Register() {
                     <option value="customer">Customer</option>
                     <option value="photographer">Photographer</option>
                 </select>
-                <input type="submit" name="submit" value="register now" class="form-btn" />
-                <p>already have an account? <Link to="/login">login now</Link></p>
+                <input type="submit" name="submit" value="register now" className="form-btn" />
+                <p>Already have an account? <Link to="/login">login now</Link></p>
 
             </form>
 
