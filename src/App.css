@@ -208,3 +208,12 @@
 #apply:hover{
    background-color: rgb(219, 64, 95);
 }
+.BuyNow{
+   width:12rem;
+   height:7vh;
+   border-radius:30px;
+   background-color:lightgreen;
+}
+.BuyNow:hover{
+   background-color: rgb(74, 220, 55);
+}

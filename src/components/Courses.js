@@ -48,15 +48,15 @@ function Courses() {
                     
                 </fieldset>
             </div> */}
-            <div className="courseTitle" style={{textAlign:'center'}}>
+            <div className="courseTitle" style={{textAlign:'center',backgroundColor:'#F5F5DC',width:'100%',height:'auto'}}>
                 <h1>Photoshop for Photographers - Beginner to Professional</h1>
             </div>
-            <div className="bigbody" style={{display:'flex',justifyContent:'space-around',alignItems:'center',height:'auto',backgroundColor:'cornsilk',width:'100%'}}>
+            <div className="bigbody" style={{display:'flex',marginTop:'-12px',justifyContent:'space-around',alignItems:'center',height:'100%',backgroundColor:'#F5F5DC',width:'100%'}}>
                 <div className="beginer" style={{backgroundColor:'yellow',display:'flex',justifyContent:'center',flexDirection:'column'}}><Paper sx={{padding:3,textAlign:'center',justifyContent:'center',alignItems:'center'}} elevation={5}>
                     <div className="video">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/IyR_uYsRdPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                    <div className="point1" style={{backgroundColor:'blue',width:'100%',justifyContent:'center',textAlign:'center',display:'flex'}}>
+                    <div className="point1" style={{backgroundColor:'#F5F5DC',width:'100%',justifyContent:'center',textAlign:'center',display:'flex'}}>
                         <ul style={{ listStyle: 'none',textAlign:'center' }}>
                             <li> <span className='tick'><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span> <span className='title'>You will learn how to work with masks in photoshop</span></li>
                             <li><span className='tick'><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span> <span className='title'>You will learn how to work with masks in photoshop</span></li>
@@ -70,7 +70,7 @@ function Courses() {
                     <div className="video">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/_nQKf_Fgk_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                    <div className="point2" style={{backgroundColor:'greenyellow',width:'100%',justifyContent:'center',textAlign:'center',display:'flex'}}>
+                    <div className="point2" style={{backgroundColor:'#F5F5DC',width:'100%',justifyContent:'center',textAlign:'center',display:'flex'}}>
                     <ul style={{ listStyle: 'none',textAlign:'center' }}>
                             <li> <span className='tick'><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span> <span className='title'>You will learn how to clean up images professionaly</span></li>
                             <li><span className='tick'><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span> <span className='title'>You will learn how to work selectively with lights</span></li>

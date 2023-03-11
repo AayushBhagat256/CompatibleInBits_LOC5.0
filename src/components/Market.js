@@ -6,11 +6,11 @@ import Navbar from './Navbar'
 
 function Market() {
     return (
-        <div>
+        <div style={{backgroundColor:'#F5F5DC'}}>
             {/* <h1>This is a market</h1> */}
             <Navbar/>
             
-            <div className="container">
+            <div className="container" style={{backgroundColor:'#F5F5DC'}}>
                 <div className="row">
                     <div className="col-md-3 my-2">
                         <div class="card" style={{ width: "18rem" }}>
@@ -39,7 +39,7 @@ function Market() {
                                             </div>
                                             <div class="modal-footer">
                                                 {/* <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> */}
-                                                <button type="button" class="btn btn-primary" onClick={()=>{console.log("buttonclicked")}}>Button</button>
+                                                <button type="button" class="BuyNow"  onClick={()=>{console.log("buttonclicked")}}>Buy Now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -49,7 +49,7 @@ function Market() {
                         </div>
                     </div>
 
-                    <div className="col-md-3  my-2">
+                    {/* <div className="col-md-3  my-2">
                         <div class="card" style={{ width: "18rem" }}>
                             <img class="card-img-top" src={Image} height={300} alt="Card image cap" />
                             <div class="card-body">
@@ -100,7 +100,7 @@ function Market() {
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
