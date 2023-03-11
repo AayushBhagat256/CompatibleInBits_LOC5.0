@@ -32,7 +32,7 @@ function CustomerPanel() {
             <Navbar/>
             <div className='container-class'>
                 <div className="heading">
-                    <h1>This is cp</h1>
+                    {/* <h1>This is cp</h1> */}
                 </div>
 
                 {/* <input type="text" id="myInput" onChange={e=>setVal(e.target.value)} value={val} placeholder="Search for names.."/>
@@ -42,7 +42,7 @@ function CustomerPanel() {
         </li>
       ))} */}
                 <div className="optionsList">
-                    <p>select a option</p><select name="" id="optlist">
+                    <p>Select a domain as per your requirement</p><select name="" id="optlist">
                         <option value="dom1">dom1</option>
                         <option value="dom2">dom2</option>
                         <option value="dom3">dom3</option>
@@ -51,7 +51,7 @@ function CustomerPanel() {
                     </select>
 
                 </div>
-                <button onClick={check1}>GEt</button>
+                <button id='apply' onClick={check1}>Apply</button>
 
             </div>
             <div className="container-cld">

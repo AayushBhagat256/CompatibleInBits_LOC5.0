@@ -4,14 +4,14 @@
     align-items: center;
     flex-direction: column;
     height: 25vh;
-    background-color: chartreuse;
+    background-color: #F5F5DC;
 }
 .container-cld{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: darkslateblue;
+    background-color: #F5F5DC;
     height: 65vh;
 }
 .upperhalf{

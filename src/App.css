@@ -185,3 +185,26 @@
 .navbar{
    background: linear-gradient(to right ,#FAF9F6,#FAF9F6);
 }
+.optionslist select{
+   
+      width: 100%;
+      padding:10px 15px;
+      font-size: 17px;
+      margin:8px 0;
+      background: #eee;
+      border-radius: 5px;
+   
+}
+.optionslist select option{
+   background: #fff;
+   text-align: center;
+}
+#apply{
+   width:12rem;
+   height:7vh;
+   border-radius:30px;
+   background-color:pink;
+}
+#apply:hover{
+   background-color: rgb(219, 64, 95);
+}
