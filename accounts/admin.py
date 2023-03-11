@@ -17,3 +17,5 @@ UserProfile = get_user_model()
 admin.site.register(UserProfile, CustomUserAdmin)
 
 admin.site.register(domain)
+admin.site.register(multi_image)
+admin.site.register(reviews)

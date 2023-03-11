@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     #apps
     'accounts',
     'marketplace',
+    'booking',
 ]
 
 MIDDLEWARE = [
