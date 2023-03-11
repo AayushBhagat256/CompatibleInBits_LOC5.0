@@ -38,8 +38,13 @@ class multi_image(models.Model):
     image = models.ImageField(upload_to="profilealbum/",blank=True, null=True)
 
 class domain(models.Model):
+    Domain_Choices = (('food', 'food'),
+              ('portrait', 'portrait'),
+              ('corporate_event', 'corporate_event'),
+              ('corporate_headshots', 'corporate_headshots'),
+              ('personal', 'personal'))
     user = models.ForeignKey(UserProfile, default=None, on_delete=models.CASCADE)
-    domain_title = models.CharField(blank=True, max_length=150)
+    domain_title = models.CharField(choices=Domain_Choices, blank=True, max_length=150)
     price = models.IntegerField(blank=True)
 
 # class CodeEmail(models.Model):

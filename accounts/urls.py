@@ -12,7 +12,8 @@ urlpatterns = [
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('profile/',views.ProfileView.as_view(), name='profile'),
     path('domain/',views.DomainView.as_view(), name='domain'),
-    path('images/',views.ImageAlbumView.as_view(), name='domain')
+    path('images/',views.ImageAlbumView.as_view(), name='domain'),
+    path('domainspecific/<str:name>/',views.ParticularDomainView.as_view(), name='specificdomain'),
 ]
 
 

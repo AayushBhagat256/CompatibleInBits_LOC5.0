@@ -77,3 +77,9 @@ class Image_serializer(serializers.ModelSerializer):
         )
         image_inst.save()
         return image_inst
+    
+# class Specific_Domain_serializer(serializers.ModelSerializer):
+#     user = 
+#     class Meta(object):
+#         model = domain
+#         fields = ['domain_title','price']

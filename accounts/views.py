@@ -93,3 +93,23 @@ class ImageAlbumView(GenericAPIView):
             serializer_inst = Image_serializer(inst)
             return Response(serializer_inst.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class ParticularDomainView(GenericAPIView):
+    permission_classes=[IsAuthenticated]
+    serializer_class = Domain_serializer
+    parser_classes = (FormParser, MultiPartParser)
+
+    def get_object(self, name):
+        try:
+            return domain.objects.filter(domain_title=name)
+        except domain.DoesNotExist:
+            raise status.HTTP_404_NOT_FOUND
+
+    def get(self,request, *args, **kwargs):
+        name = kwargs.get('name')
+        domains = self.get_object(name)
+        userlist =[]
+        for inst in domains:
+            userlist.append(UserProfile.objects.get(email=inst.user))
+        serializer = UserSerializer(userlist, many=True)
+        return Response(serializer.data, status=status.HTTP_302_FOUND)
