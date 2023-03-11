@@ -41,7 +41,9 @@ export default function Navbar() {
                             </li>
                             <li class="nav-item">
                             <Button disabled={isDisabled}>
+                                <Link to='/market'>
                                 Marketplace
+                                </Link>
                                 </Button>
                             </li>
                             <li class="nav-item">

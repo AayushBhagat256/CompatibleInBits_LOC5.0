@@ -8,9 +8,11 @@ import { useState, useEffect } from 'react';
 import { Container } from '@mui/system';
 import Tab_photo from './Tab_photo';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 
 export default function Photoprofile() {
+    const navi = useNavigate()
     const [data,setData]=useState();
     useEffect(() => {
 
@@ -38,8 +40,31 @@ export default function Photoprofile() {
     }, []);
 
     const edit=()=>{
-
-    
+        //navi('edit')
+        var FormData = require('form-data');
+        var data = new FormData();
+        data.append('email', data.email);
+        data.append('username', data.username);
+        
+        var config = {
+          method: 'put',
+        maxBodyLength: Infinity,
+          url: '127.0.0.1:8000/account/profile/',
+          headers: { 
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NTY5NDEzLCJpYXQiOjE2Nzg1NjkxMTMsImp0aSI6IjRmNGM1NjUzNzQ3MTQxZDI5YzY0OWI3ODdjZGZmZDUzIiwidXNlcl9pZCI6MTN9.Hevrb_a8ax-6GfuOlIDIxdnNW4O89q7qEK1Qm1N8Cak', 
+            ...data.getHeaders()
+          },
+          data : data
+        };
+        
+        axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+        
     
     }
 
