@@ -12,6 +12,7 @@ import {
 
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
+import Photoprofile from './components/Photoprofile';
 
 // import Landing from './components/Landing';
 // import Navbar from './components/Navbar';
@@ -36,6 +37,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/navbar' element={<Navbar></Navbar>}/>
+      </Routes>
+      <Routes>
+        <Route path='/photoprofile' element={<Photoprofile></Photoprofile>}/>
       </Routes>
     </Router>
   )
