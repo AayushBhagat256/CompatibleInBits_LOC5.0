@@ -42,7 +42,7 @@ function Login() {
   }
   return (
     <div>
-      <div class="form-container">
+      <div className="form-container">
 
         <form onSubmit={submitform}>
           <h3>login now</h3>
@@ -54,7 +54,7 @@ function Login() {
           <button onClick={myFunction}>Show</button>
           {/* <input type="checkbox" name="" id="" value='Show'/> */}
           </div>
-          <input type="submit" name="submit" value="login now" class="form-btn" />
+          <input type="submit" name="submit" value="login now" className="form-btn" />
           <p>Don't have an account? <Link to='/register'>register now</Link></p>
         </form>
 

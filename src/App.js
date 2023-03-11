@@ -9,7 +9,10 @@ import {
   Routes,
   //Link
 } from "react-router-dom";
+
 import Navbar from './components/Navbar';
+import LandingPage from './components/LandingPage';
+
 // import Landing from './components/Landing';
 // import Navbar from './components/Navbar';
 
@@ -21,6 +24,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Landing/>}/>
       </Routes> */}
+      <Routes>
+        <Route path='/homepage' element={<LandingPage/>} />
+      </Routes>
       <Routes>
         <Route path='/login' element={<Login/>}/>
       </Routes>
