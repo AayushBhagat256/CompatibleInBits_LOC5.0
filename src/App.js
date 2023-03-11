@@ -19,6 +19,7 @@ import Photodomain from './components/Photodomain';
 
 import CustomerPanel from './components/CustomerPanel';
 import FilteredList from './components/CustomerPanel';
+import Courses from './components/Courses';
 
 
 // import Landing from './components/Landing';
@@ -33,6 +34,9 @@ function App() {
         <Route path='/' element={<Landing/>}/>
       </Routes> */}
       {/* <Navbar/> */}
+      <Routes>
+        <Route path='/courses' element={<Courses/>}/>
+      </Routes>
       <Routes>
         <Route path='/cp' element={<FilteredList/>}/>
       </Routes>

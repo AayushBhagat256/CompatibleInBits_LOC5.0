@@ -16,6 +16,7 @@ import SkipNextIcon from '@mui/icons-material/SkipNext';
 import Button from '@mui/material/Button'
 
 function CustomerPanel() {
+    // document.addEventListener('contextmenu', event => event.preventDefault());
     const theme = useTheme();
     // const [val,setVal] = useState('')
     // const names = ['James', 'John', 'Paul', 'Ringo', 'George'];
