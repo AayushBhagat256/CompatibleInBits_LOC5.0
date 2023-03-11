@@ -1,3 +1,68 @@
 from django.shortcuts import render
 
 # Create your views here.
+from rest_framework.generics import GenericAPIView
+from .models import UserProfile
+from . serializers import *
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.parsers import FileUploadParser,FormParser,MultiPartParser
+import json
+
+class UserRegistration(GenericAPIView):
+    permission_classes=[AllowAny]
+    serializer_class = RegistrationSerializer
+
+    def post(self, request):
+        serializer = RegistrationSerializer(data=request.data)
+        data={}
+        if serializer.is_valid():
+            account=serializer.save()
+            data['serializer_data']=serializer.data
+            return Response(data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class ProfileView(GenericAPIView):
+    permission_classes=[IsAuthenticated]
+    serializer_class = UserSerializer
+    parser_classes = (FormParser, MultiPartParser)
+
+    def get(self, request, *args, **kwargs):
+        serializer = self.serializer_class(request.user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def put(self, request, *args, **kwargs):
+        serializer_data = request.data
+        serializer = UserSerializer(request.user, data=serializer_data, partial=True)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class DomainView(GenericAPIView):
+    permission_classes=[IsAuthenticated]
+    serializer_class = Domain_serializer
+    parser_classes = (FormParser, MultiPartParser)
+
+    def get_object(self, request):
+        user_email=request.user.email
+        user=UserProfile.objects.get(email=user_email)
+        # try:
+        return domain.objects.filter(user__email=user_email)
+        # except domain.DoesNotExist:
+        #     raise status.HTTP_404_NOT_FOUND
+
+    def get(self, request):
+        domains = self.get_object(request)
+        serializer = Domain_serializer(domains, many=True)
+        return Response(serializer.data, status=status.HTTP_302_FOUND)
+
+    def put(self, request, *args, **kwargs):
+        serializer_data = request.data
+        serializer = Domain_serializer(request.user, data=serializer_data, partial=True)
+        if serializer.is_valid(raise_exception=True):
+            inst = serializer.save(request)
+            serializer_inst = Domain_serializer(inst)
+            return Response(serializer_inst.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
