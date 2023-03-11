@@ -1,10 +1,18 @@
 import React from 'react'
 import Image from '../images/homepagepng.png'
 import Navbar from './Navbar'
+import { useState, useEffect } from 'react';
 // import Grid from '@mui/material/Grid'
 // import Container from '@mui/material/Container'
 
 function Market() {
+    useEffect(() => {
+
+        var bear="Bearer "+localStorage.getItem("access");
+        
+
+
+    }, []);
     return (
         <div style={{backgroundColor:'#F5F5DC'}}>
             {/* <h1>This is a market</h1> */}
