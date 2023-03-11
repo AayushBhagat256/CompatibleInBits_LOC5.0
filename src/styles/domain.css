@@ -1,0 +1,10 @@
+.domainsel{
+    background-image: url('../images/Couplesvg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.head{
+    display: 'flex';
+    justify-content: 'center';
+}
