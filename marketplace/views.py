@@ -6,6 +6,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.parsers import FileUploadParser,FormParser,MultiPartParser
+from accounts.models import *
+from accounts.serializers import *
 # Create your views here.
 
 class AlbumListView(GenericAPIView):
@@ -80,3 +82,20 @@ class MarketImageAlbumView(GenericAPIView):
             return Response(serializer_inst.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+class MarketImageAlbumProfileView(GenericAPIView):
+    permission_classes=[IsAuthenticated]
+    serializer_class = Market_Album_Image_serializer
+    parser_classes = (FormParser, MultiPartParser)
+
+    def get_object(self, pk):
+        album=Album.objects.get(pk=pk)
+        # user=UserProfile.objects.get(email=user_email)
+        # try:
+        return UserProfile.objects().get(email=album.photographer)
+        # except domain.DoesNotExist:
+        #     raise status.HTTP_404_NOT_FOUND
+
+    def get(self, request, pk):
+        user = self.get_object(pk)
+        serializer = UserSerializer(user)
+        return Response(serializer.data, status=status.HTTP_302_FOUND)

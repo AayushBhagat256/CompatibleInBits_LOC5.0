@@ -7,10 +7,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('albumlist/',views.AlbumListView.as_view(), name='albumlist'),
-    path('albumdetail/<int:pk>/',views.AlbumDetailView.as_view(), name='albumdetail'),
-    path('albumimages/<int:pk>/',views.MarketImageAlbumView.as_view(), name='domain'),
-    path('albumprofile/<int:pk>/', views.MarketImageAlbumProfileView.as_view(), name='albumprofile')
+    path('booking/',views.BookingView.as_view(), name='bookinglist'),
+    # path('albumdetail/<int:pk>/',views.AlbumDetailView.as_view(), name='albumdetail'),
+    # path('albumimages/<int:pk>/',views.MarketImageAlbumView.as_view(), name='domain')
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
