@@ -1,3 +1,11 @@
 .image1{
     align-items: center;
 }
+.profile{
+    background-repeat: no-repeat;
+    background-image: url('../images/cover1.jpg');
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    background-color: rgb(0,0,0,0.5);
+}

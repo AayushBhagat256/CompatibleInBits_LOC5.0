@@ -14,8 +14,12 @@ import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import Photoprofile from './components/Photoprofile';
 import Market from './components/Market';
+
+import Photodomain from './components/Photodomain';
+
 import CustomerPanel from './components/CustomerPanel';
 import FilteredList from './components/CustomerPanel';
+
 
 // import Landing from './components/Landing';
 // import Navbar from './components/Navbar';
@@ -49,6 +53,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/photoprofile' element={<Photoprofile></Photoprofile>}/>
+      </Routes>
+      <Routes>
+        <Route path='/pdomain' element={<Photodomain/>}/>
       </Routes>
     </Router>
   )
