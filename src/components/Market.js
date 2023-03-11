@@ -22,8 +22,8 @@ function Market() {
 
                                 {/* <!-- Modal --> */}
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
+                                    <div class="modal-dialog" role="document" >
+                                        <div class="modal-content"  >
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                                                 
@@ -31,6 +31,9 @@ function Market() {
                                             <div class="modal-body">
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, minima fugiat quas sint quam sequi laborum, distinctio cupiditate, corporis itaque officia sunt pariatur?
                                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim reiciendis consectetur, consequatur est rem commodi soluta eius dolor, officia aliquam, aspernatur dolores? Reiciendis ut molestias nesciunt repellat a error commodi incidunt nam libero perspiciatis, neque ullam modi! Exercitationem repellendus, veniam distinctio ducimus officia obcaecati perspiciatis eum, corporis natus quos quasi?
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequuntur ipsam rem ullam ipsum officia autem, impedit, quasi deserunt quis hic repellat voluptatem libero magni magnam vero est assumenda quae temporibus! Dolorem soluta sit delectus perspiciatis quas commodi, velit ea! Possimus veniam quam et dolor facilis officia velit eos blanditiis recusandae magni? Officiis molestias quidem eaque earum? Modi consequuntur deserunt eum repellendus commodi non quia sequi saepe est. Cupiditate quisquam vel necessitatibus dolorem expedita doloremque voluptas consequatur est architecto illo iure dolore, eum enim error itaque sed esse eaque asperiores modi perspiciatis recusandae debitis minus repudiandae ipsa. Ab, molestias quae?
+                                                <br />
+                                                <img src={Image} alt="" height={200} srcset="" />
                                             </div>
                                             <div class="modal-footer">
                                                 {/* <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> */}
