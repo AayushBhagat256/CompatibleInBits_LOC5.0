@@ -8,6 +8,7 @@ import Domain_indi from './Domain_indi';
 import Work_indi from './Work_indi';
 import Market_indi from './Market_indi';
 import Review from './Review';
+import Enquires from './Enquires';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -58,6 +59,7 @@ function TabPanel(props) {
               <Tab label="Works" {...a11yProps(1)} />
               <Tab label="Marketplace" {...a11yProps(2)} />
               <Tab label="Review" {...a11yProps(3)} />
+              <Tab label="Enquires" {...a11yProps(4)} />
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
@@ -71,6 +73,9 @@ function TabPanel(props) {
           </TabPanel>
           <TabPanel value={value} index={3}>
             <Review/>
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            <Enquires/>
           </TabPanel>
         </Box>
       );
