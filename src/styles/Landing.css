@@ -1,0 +1,68 @@
+.landingContainer{
+    background-color: aqua;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+.imageContainer{
+    background-color: beige;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    /* background-image: url('../images/homepagepng.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto; */
+}
+.imageContainer img{
+    aspect-ratio: 1;
+    height: 50%;
+}
+.messageContainer{
+    background-color: coral;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+.messageContainer .buttonclass button{
+    background-color: darkorchid;
+}
+@media screen and (max-width:415px) {
+    .landingContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .imageContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 45vh;
+    }
+    .imageContainer img{
+        height: 94%;
+    }
+    .messageContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 45vh;
+    }
+    .messageContainer .littlemore{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+}
