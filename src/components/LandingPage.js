@@ -12,13 +12,14 @@ function LandingPage() {
         <div className="imageContainer"><img src={Image} alt="" srcset=""/></div>
         <div className="messageContainer">
             <div className="headingmsg">
-            <h1>Hello there</h1>
+            <h1>Welcome to FrameFind</h1>
             </div>
             <div className="littlemore">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, at eligendi ullam iusto perspiciatis rerum, eaque in, commodi qui minima nisi itaque accusamus? Quaerat eligendi ea cumque perspiciatis magni eos!
+                Photography is a art of capturing images using camera. <br /> It can convey emotions,tell stories and can preserve memories
             </div>
             <div className="buttonsclass">
-                <button>Get Started</button>
+              <br />
+                <button id='started' >Get Started</button>
             </div>
         </div>
       </div>

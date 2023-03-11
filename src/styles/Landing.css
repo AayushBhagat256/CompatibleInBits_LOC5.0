@@ -6,7 +6,8 @@
     justify-content: space-around;
 }
 .imageContainer{
-    background-color: beige;
+    background-color: #FAF9F6;
+    background: linear-gradient(to left,#FAF9F6,#F5F5DC);
     height: 100%;
     width: 100%;
     justify-content: center;
@@ -24,7 +25,8 @@
     height: 50%;
 }
 .messageContainer{
-    background-color: coral;
+    /* background-color: #F5F5DC; */
+    background: linear-gradient(to right,#FAF9F6,#F5F5DC);
     height: 100%;
     width: 100%;
     justify-content: center;
@@ -68,4 +70,13 @@
         justify-content: center;
         text-align: center;
     }
+}
+#started{
+    width:12rem;
+    height:7vh;
+    border-radius:30px;
+    background-color:pink;
+}
+#started:hover{
+    background-color: rgb(219, 64, 95);
 }

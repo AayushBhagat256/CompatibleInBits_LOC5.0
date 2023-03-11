@@ -182,3 +182,6 @@
   /* background: #eee; */
   border-radius: 5px;
 }
+.navbar{
+   background: linear-gradient(to right ,#FAF9F6,#FAF9F6);
+}
