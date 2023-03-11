@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Domain_indi from './Domain_indi';
 import Work_indi from './Work_indi';
 import Market_indi from './Market_indi';
+import Review from './Review';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -46,7 +47,7 @@ function TabPanel(props) {
     
       const handleChange = (event, newValue) => {
         setValue(newValue);
-        //console.log(newValue);
+        console.log(newValue);
       };
     
       return (
@@ -56,6 +57,7 @@ function TabPanel(props) {
               <Tab label="Domain" {...a11yProps(0)} />
               <Tab label="Works" {...a11yProps(1)} />
               <Tab label="Marketplace" {...a11yProps(2)} />
+              <Tab label="Review" {...a11yProps(3)} />
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
@@ -66,6 +68,9 @@ function TabPanel(props) {
           </TabPanel>
           <TabPanel value={value} index={2}>
             <Market_indi/>
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+            <Review/>
           </TabPanel>
         </Box>
       );

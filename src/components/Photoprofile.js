@@ -11,7 +11,7 @@ export default function Photoprofile() {
     return (
         <>
             <Navbar></Navbar>
-            <Grid container sx={{ display: 'flex' }}>
+            <Grid container sx={{ display: 'flex' }} className="profile">
                 <Grid item md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
                     <Avatar
                         className='image1'
