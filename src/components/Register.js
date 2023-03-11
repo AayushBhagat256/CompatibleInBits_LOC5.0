@@ -27,16 +27,46 @@ function Register() {
       }
 
     document.title="register page"
-    const submitregister=(e)=>{
-        e.preventDefault()
-        let k = document.getElementById('select').value
-        console.log(k)
+    
+    const passmatch=()=>{
+        let errReg1=false
+        if(pass1!=pass2){
+            alert("both passwords must be same...")
+            errReg1=true
+        }
+        return errReg1
     }
     const validateRegister=()=>{
         let errReg = false
         if(name.length<2){
             alert("Please enter a valid name")
             errReg = true
+        }
+        if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+            alert('invalid email')
+            errReg=true
+        }
+        if(pass1<8){
+            alert('passwords munst be of 8 characters')
+            errReg=true
+        }
+        if(pass2<8){
+            alert('passwords munst be of 8 characters')
+            errReg=true
+        }
+        return errReg
+    }
+    const submitregister=(e)=>{
+        e.preventDefault()
+        let k = document.getElementById('select').value
+        console.log(k)
+        const error1 = validateRegister()
+        const error2 = passmatch()
+        if(error1===false && error2===false){
+            console.log("form Submitted")
+        }
+        else{
+            console.log("Form not submitted")
         }
     }
     return (
@@ -50,7 +80,7 @@ function Register() {
                 <button onClick={myFunction}>Show</button>
                 </div>
                 <div className="passwords3">
-                <input type="password" name="cpassword" id='mypass2' onChange={(e)=>setPass2(e.target.value)} value={pass2} placeholder="confirm your password" />
+                <input type="password" name="cpassword" id='mypass2' onBlur={passmatch} onChange={(e)=>setPass2(e.target.value)} value={pass2} placeholder="confirm your password" />
                 <button onClick={myFunction2}>Show</button>
                 </div>
                 <select name="user_type" id='select'>
