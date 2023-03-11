@@ -137,3 +137,13 @@ class Reviewview(GenericAPIView):
             serializer_inst = Review_serializer(inst)
             return Response(serializer_inst.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class ReviewListview(GenericAPIView):
+    permission_classes=[IsAuthenticated]
+    serializer_class = Review_serializer
+    parser_classes = (FormParser, MultiPartParser)
+    
+    def get(self, request):
+        review = reviews.objects.all()
+        serializer = Review_serializer(review, many=True)
+        return Response(serializer.data, status=status.HTTP_302_FOUND)
