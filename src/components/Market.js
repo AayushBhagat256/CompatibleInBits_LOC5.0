@@ -1,12 +1,14 @@
 import React from 'react'
 import Image from '../images/homepagepng.png'
+import Navbar from './Navbar'
 // import Grid from '@mui/material/Grid'
 // import Container from '@mui/material/Container'
 
 function Market() {
     return (
         <div>
-            <h1>This is a market</h1>
+            {/* <h1>This is a market</h1> */}
+            <Navbar/>
             
             <div className="container">
                 <div className="row">

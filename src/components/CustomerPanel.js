@@ -14,6 +14,7 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import Button from '@mui/material/Button'
+import Navbar from './Navbar';
 
 function CustomerPanel() {
     // document.addEventListener('contextmenu', event => event.preventDefault());
@@ -28,6 +29,7 @@ function CustomerPanel() {
 
     return (
         <>
+            <Navbar/>
             <div className='container-class'>
                 <div className="heading">
                     <h1>This is cp</h1>

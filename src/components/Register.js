@@ -46,11 +46,11 @@ function Register() {
             alert('invalid email')
             errReg=true
         }
-        if(pass1<8){
+        if(pass1.length<8){
             alert('passwords munst be of 8 characters')
             errReg=true
         }
-        if(pass2<8){
+        if(pass2.length<8){
             alert('passwords munst be of 8 characters')
             errReg=true
         }
