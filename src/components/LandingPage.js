@@ -19,7 +19,9 @@ function LandingPage() {
             </div>
             <div className="buttonsclass">
               <br />
-                <button id='started' >Get Started</button>
+                <button id='started'>
+                  Get Started
+                  </button>
             </div>
         </div>
       </div>

@@ -61,9 +61,11 @@ function Login() {
         if(localStorage.getItem("photo")=='true')
         {
           navilink('/pdomain');
+          localStorage.setItem("log",true);
         }
         else{
           navilink('/homepage');
+          localStorage.setItem("log",true);
         }
         
 
