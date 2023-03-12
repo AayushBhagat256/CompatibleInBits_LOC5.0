@@ -12,7 +12,7 @@ class booking_serializer(serializers.ModelSerializer):
         bookinginst = booking(
             booker=UserProfile.objects.get(email=booker),
             date=self.validated_data['date'],
-            booked=UserProfile.objects.get(email=booker),
+            booked=self.validated_data['booked'],
         )
         bookinginst.save()
 
