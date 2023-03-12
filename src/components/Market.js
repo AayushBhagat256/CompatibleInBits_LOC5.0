@@ -51,7 +51,7 @@ axios(config)
 
     }
     
-    // document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('contextmenu', event => event.preventDefault());
     return (
         <div style={{backgroundColor:'#F5F5DC'}}>
             {/* <h1>This is a market</h1> */}
