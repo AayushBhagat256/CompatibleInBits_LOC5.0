@@ -3,9 +3,13 @@
 }
 .profile{
     background-repeat: no-repeat;
-    background-image: url('../images/cover1.jpg');
+    background-image: url('https://media.istockphoto.com/id/1341107435/vector/abstract-cover-design-with-light-blue-gradient-and-thin-lines-a3.jpg?s=612x612&w=0&k=20&c=xQGg2wVY_-w72OhvbwQkbDgRLuahQ3DKrg0iaCv3eW8=');
+    /* background: url('../images/alma.jpg') rgb(0,0,0,0.3); */
     background-size: cover;
     object-fit: cover;
     background-position: center;
     background-color: rgb(0,0,0,0.5);
+}
+.someData{
+    color:white;
 }

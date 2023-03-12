@@ -85,7 +85,10 @@ export default function Photoprofile() {
                     <Typography variant='h3'>
                         {data.username}
                     </Typography>
-                    <Typography variant="h6">Bio is here Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quisquam aliquid accusantium a labore facilis excepturi blanditiis laborum facere? Eum recusandae repellendus dolores est velit quo dignissimos quos accusantium quidem.</Typography>
+                    <div className="whitekaro"style={{color:'white'}}>
+                    <Typography variant="h6" className='someData' sx={{color:'white'}}>Bio is here Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quisquam aliquid accusantium a labore facilis excepturi blanditiis laborum facere? Eum recusandae repellendus dolores est velit quo dignissimos quos accusantium quidem.</Typography>
+                    </div>
+                    
                 </Grid>
                 <Grid item md={12}>
                     <Button variant='outlined' onClick={edit}>

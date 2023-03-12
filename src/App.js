@@ -37,6 +37,9 @@ function App() {
       </Routes> */}
       {/* <Navbar/> */}
       <Routes>
+        <Route path='/' element={<LandingPage/>} />
+      </Routes>
+      <Routes>
         <Route path='/vr' element={<Vr/>}/>
       </Routes>
       <Routes>

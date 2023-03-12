@@ -17,7 +17,7 @@ import Button from '@mui/material/Button'
 import Navbar from './Navbar';
 
 function CustomerPanel() {
-    // document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('contextmenu', event => event.preventDefault());
     const theme = useTheme();
     // const [val,setVal] = useState('')
     // const names = ['James', 'John', 'Paul', 'Ringo', 'George'];

@@ -217,3 +217,7 @@
 .BuyNow:hover{
    background-color: rgb(74, 220, 55);
 }
+.someData{
+   /* background-color: #eee; */
+   color: #fff !important;
+}
