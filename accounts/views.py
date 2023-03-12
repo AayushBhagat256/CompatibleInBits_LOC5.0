@@ -9,6 +9,7 @@ from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.parsers import FileUploadParser,FormParser,MultiPartParser
 import json
+from dummy import nlp
 
 class UserRegistration(GenericAPIView):
     permission_classes=[AllowAny]
@@ -146,6 +147,44 @@ class ReviewListview(GenericAPIView):
     def get(self, request, *args, **kwargs):
         username = kwargs.get('username')
         review = reviews.objects.filter(user__username=username)
-        print(reviews)
+        # print(review)
         serializer = Review_serializer(review, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+class ReviewPercentView(GenericAPIView):
+    permission_classes=[IsAuthenticated]
+    serializer_class = Review_serializer
+    parser_classes = (FormParser, MultiPartParser)
+    
+    def get(self, request, *args, **kwargs):
+        username = kwargs.get('username')
+        review = reviews.objects.filter(user__username=username)
+        # print(review)
+        serializer = Review_Per_serializer(data=review, many=True)
+        if serializer.is_valid():
+            print(serializer.data)
+        inputlist =[]
+        for inst in serializer.data:
+            
+            inputlist.append(str(inst.values()))
+        print(inst.values())
+        pred = nlp(inputlist)
+        print(pred)
+        good=0
+        bad=0
+        for i in pred:
+            if i==2:
+                good+=1
+            else:
+                bad+=1
+        print(good)
+        print(bad)
+        avg = (good)/(good+bad)
+        avgper = avg*100
+        print(avgper)
+    
+        serializer.avgrev = int(avgper)
+        serializer.save(update_fields=["avgrev"])
+        print(serializer.avgrev)
+
         return Response(serializer.data, status=status.HTTP_200_OK)

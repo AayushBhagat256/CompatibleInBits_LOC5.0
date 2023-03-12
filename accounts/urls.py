@@ -15,7 +15,8 @@ urlpatterns = [
     path('images/',views.ImageAlbumView.as_view(), name='domain'),
     path('domainspecific/<str:name>/',views.ParticularDomainView.as_view(), name='specificdomain'),
     path('reviews/',views.Reviewview.as_view(), name='review'),
-    path('reviewlist/<str:username>/',views.ReviewListview.as_view(), name='reviewlist')
+    path('reviewlist/<str:username>/',views.ReviewListview.as_view(), name='reviewlist'),
+    path('reviewpercent/<str:username>/',views.ReviewPercentView.as_view(), name='reviewpercent')
 ]
 
 

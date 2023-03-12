@@ -8,4 +8,3 @@ dummy.py
 sentimentModel.pkl
 sentimentModel.joblib
 out.pkl
-nlp.pkl

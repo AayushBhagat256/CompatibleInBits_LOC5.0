@@ -88,7 +88,7 @@ class Image_serializer(serializers.ModelSerializer):
 class Review_serializer(serializers.ModelSerializer):
     class Meta(object):
         model = reviews
-        fields = ['review','is_good']
+        fields = ['review']
     
     def save(self, request):
         user_email = request.user.email
@@ -98,3 +98,8 @@ class Review_serializer(serializers.ModelSerializer):
         )
         image_inst.save()
         return image_inst
+
+class Review_Per_serializer(serializers.ModelSerializer):
+    class Meta(object):
+        model = reviews
+        fields = ['user','review','avgrev']
