@@ -17,11 +17,11 @@ class BookingView(GenericAPIView):
     def get(self, request):
         review = reviews.objects.all()
         serializer = booking_serializer_get(review, many=True)
-        return Response(serializer.data, status=status.HTTP_302_FOUND)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     def post(self, request):
         serializer = booking_serializer(data=request.data)
         if serializer.is_valid():
             serializer.save(request)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

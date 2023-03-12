@@ -23,7 +23,7 @@ class AlbumListView(GenericAPIView):
         serializer = AlbumSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(request)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class AlbumDetailView(GenericAPIView):
@@ -71,7 +71,7 @@ class MarketImageAlbumView(GenericAPIView):
     def get(self, request, pk):
         images = self.get_object(pk)
         serializer = Market_Album_Image_serializer(images, many=True)
-        return Response(serializer.data, status=status.HTTP_302_FOUND)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     def put(self, request, pk, *args, **kwargs):
         serializer_data = request.data
@@ -98,4 +98,4 @@ class MarketImageAlbumProfileView(GenericAPIView):
     def get(self, request, pk):
         user = self.get_object(pk)
         serializer = UserSerializer(user)
-        return Response(serializer.data, status=status.HTTP_302_FOUND)
+        return Response(serializer.data, status=status.HTTP_200_OK)
