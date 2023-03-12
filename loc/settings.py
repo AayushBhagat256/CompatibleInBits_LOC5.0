@@ -180,3 +180,6 @@ CORS_ORIGIN_WHITELIST = (
        'http://localhost:5000',
        'http://localhost:8000',
 )
+
+RAZORPAY_API_KEY = ''
+RAZORPAY_API_SECRET_KEY = ''

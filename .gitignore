@@ -4,7 +4,6 @@ __pycache__/
 migrations/
 .env
 media/
-dummy.py
 sentimentModel.pkl
 sentimentModel.joblib
 out.pkl
