@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('booking/<str:username>',views.BookingView.as_view(), name='bookinglist'),
-    path('payment/<int:amount>',views.pay, name='pay')
+    path('payment/',views.pay, name='pay')
     # path('albumdetail/<int:pk>/',views.AlbumDetailView.as_view(), name='albumdetail'),
     # path('albumimages/<int:pk>/',views.MarketImageAlbumView.as_view(), name='domain')
 ]

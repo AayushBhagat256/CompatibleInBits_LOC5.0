@@ -183,8 +183,15 @@ class ReviewPercentView(GenericAPIView):
         avgper = avg*100
         print(avgper)
     
-        serializer.avgrev = int(avgper)
-        serializer.save(update_fields=["avgrev"])
-        print(serializer.avgrev)
+        # serializer.data.avgrev = int(avgper)
+        print(serializer.data)
+        print(avgper)
+        for i in reviews.objects.all():
+            inst = reviews.objects.get(id=i.id)
+            inst.avgrev=avgper
+            inst.save()
+        print(inst)
+        serializer.save(avgrev=avgper)
+        print(serializer.data)
 
         return Response(serializer.data, status=status.HTTP_200_OK)

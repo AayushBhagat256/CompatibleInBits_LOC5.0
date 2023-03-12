@@ -50,7 +50,7 @@ class domain(models.Model):
 class reviews(models.Model):
     user = models.ForeignKey(UserProfile, default=None, on_delete=models.CASCADE)
     review = models.TextField(blank=True)
-    avgrev = models.IntegerField(blank=True, default=100)
+    avgrev = models.IntegerField(blank=True, default=0)
 
 
 # class CodeEmail(models.Model):

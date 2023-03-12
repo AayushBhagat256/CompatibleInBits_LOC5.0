@@ -37,7 +37,7 @@ class BookingView(GenericAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 client = razorpay.Client(auth=(RAZORPAY_API_KEY, RAZORPAY_API_SECRET_KEY))
-def pay(request, amount):
+def pay(request):
 
     if request.POST==True:
         razorpay_payment_id = request.razorpay_payment_id
@@ -51,8 +51,8 @@ def pay(request, amount):
         })
 
 
-    actual_amount = amount*100
-    amount_disp = amount
+    actual_amount = 100000
+    amount_disp = 1000
     DATA = {
         "amount": actual_amount,
         "currency": "INR",
