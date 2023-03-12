@@ -40,7 +40,7 @@ maxBodyLength: Infinity,
 
 axios(config)
 .then(function (response) {
-  console.log(JSON.stringify(response.data));
+  console.log((response.data));
   alert('success')
   setMdata(response.data)
 })
@@ -61,7 +61,7 @@ axios(config)
                 <div className="row">
                     {
                         mdata.map(map=>
-                            <div className="col-md-3 my-2">
+                            <div className="col-md-6 my-2">
                         <div class="card" style={{ width: "18rem" }}>
                             <img class="card-img-top" src={uri+map.coverphoto+'/'} height={300} alt="Card image cap" />
                             <div class="card-body">
