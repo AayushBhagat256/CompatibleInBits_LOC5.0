@@ -5,14 +5,14 @@ class booking_serializer(serializers.ModelSerializer):
     
     class Meta(object):
         model = booking
-        exclude = ['booker', ]
+        exclude = ['booker','id','booked_user' ]
 
-    def save(self, request):
+    def save(self, request, username):
         booker =request.user.email
         bookinginst = booking(
             booker=UserProfile.objects.get(email=booker),
             date=self.validated_data['date'],
-            booked=self.validated_data['booked'],
+            booked_user=username,
         )
         bookinginst.save()
 
