@@ -2,8 +2,10 @@ import React from 'react'
 import '../styles/Landing.css'
 import Image from '../images/homepagepng.png'
 import Navbar from './Navbar'
+import { useNavigate } from 'react-router'
 
 function LandingPage() {
+  const chalonav = useNavigate()
   return (
     <div>
       {/* <h1>This is a landing page</h1> */}
@@ -19,7 +21,7 @@ function LandingPage() {
             </div>
             <div className="buttonsclass">
               <br />
-                <button id='started' >Get Started</button>
+                <button id='started' onClick={()=>chalonav('/login')} >Get Started</button>
             </div>
         </div>
       </div>
