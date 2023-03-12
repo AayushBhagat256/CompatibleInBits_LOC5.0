@@ -56,7 +56,7 @@ class DomainView(GenericAPIView):
     def get(self, request):
         domains = self.get_object(request)
         serializer = Domain_serializer(domains, many=True)
-        return Response(serializer.data, status=status.HTTP_302_FOUND)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request, *args, **kwargs):
         serializer_data = request.data
@@ -83,7 +83,7 @@ class ImageAlbumView(GenericAPIView):
     def get(self, request):
         images = self.get_object(request)
         serializer = Image_serializer(images, many=True)
-        return Response(serializer.data, status=status.HTTP_302_FOUND)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     def put(self, request, *args, **kwargs):
         serializer_data = request.data
@@ -112,7 +112,7 @@ class ParticularDomainView(GenericAPIView):
         for inst in domains:
             userlist.append(UserProfile.objects.get(email=inst.user))
         serializer = UserSerializer(userlist, many=True)
-        return Response(serializer.data, status=status.HTTP_302_FOUND)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
 class Reviewview(GenericAPIView):
     permission_classes=[IsAuthenticated]
@@ -127,7 +127,7 @@ class Reviewview(GenericAPIView):
     def get(self, request):
         reviews = self.get_object(request)
         serializer = Review_serializer(reviews, many=True)
-        return Response(serializer.data, status=status.HTTP_302_FOUND)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     def put(self, request, *args, **kwargs):
         serializer_data = request.data
@@ -143,7 +143,9 @@ class ReviewListview(GenericAPIView):
     serializer_class = Review_serializer
     parser_classes = (FormParser, MultiPartParser)
     
-    def get(self, request):
-        review = reviews.objects.all()
+    def get(self, request, *args, **kwargs):
+        username = kwargs.get('username')
+        review = reviews.objects.filter(user__username=username)
+        print(reviews)
         serializer = Review_serializer(review, many=True)
-        return Response(serializer.data, status=status.HTTP_302_FOUND)
+        return Response(serializer.data, status=status.HTTP_200_OK)
