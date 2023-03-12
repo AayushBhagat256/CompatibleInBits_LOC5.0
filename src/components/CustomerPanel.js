@@ -64,7 +64,7 @@ axios(config)
   }
   useEffect(
     () => {
-      incrementProgress(90)
+      incrementProgress(65)
       // incrementProgress2(65)
       // incrementProgress3(85)
       // incrementProgress4(50)
@@ -78,6 +78,10 @@ axios(config)
     }
   };
 
+
+      const buy=()=>{
+
+      }
   return (
     <>
       <Navbar />
@@ -136,8 +140,8 @@ axios(config)
 
             </CardContent>
             <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-              <Button variant='outlined'>
-                <Link to='/photoprofile'>Explore</Link>
+              <Button variant='outlined' onClick={buy}>
+                Book
               </Button>
               {/* <IconButton aria-label="previous">
             {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
