@@ -123,9 +123,16 @@ axios(config)
                   </div>
                 </div>
               </Typography>
+              <br></br>
               <Typography variant="subtitle1" color="text.secondary" component="div">
                 Review
-                </Typography>
+                </Typography> 
+                <div className="progress-bar">
+          <div
+            className="progress-bar-fill"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
 
             </CardContent>
             <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
@@ -135,12 +142,7 @@ axios(config)
               {/* <IconButton aria-label="previous">
             {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
           </IconButton> */}
-              <div className="progress-bar">
-          <div
-            className="progress-bar-fill"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+              
               {/* <IconButton aria-label="play/pause">
             <PlayArrowIcon sx={{ height: 38, width: 38 }} />
           </IconButton> */}

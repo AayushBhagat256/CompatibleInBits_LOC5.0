@@ -2,26 +2,41 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@mui/material'
 import { useState,useEffect } from 'react';
+import '../styles/Landing.css'
 
 export default function Navbar() {
-
+    const [logi,setLogi]=useState("Login");
     const [isDisabled, setIsDisabled] = useState(true);
     useEffect(() => {
         if(localStorage.getItem('access'))
         {
             setIsDisabled(false);
         }
+        if(localStorage.getItem("log")=='true')
+        {
+            setLogi("Logout");
+            console.log(logi)
+        }
       }, []);
     return (
         <>
             <nav class="navbar navbar-expand-lg bg-body-tertiary" style={{backgroundColor:'#FAF9F6'}}>
                 <div class="container-fluid">
+
+                    <a class="navbar-brand" href="#">FrameFind</a>
+
                     <a class="navbar-brand" href="/">Navbar</a>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                                <Link to="/login">
+                                    <a class="nav-link active ml-3" aria-current="page" id='a' >{logi}</a>
+                                </Link>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Options..
@@ -34,7 +49,7 @@ export default function Navbar() {
                                     <li><a class="dropdown-item" href="/photoprofile">Profile</a></li>
                                 </ul>
                             </li>
-                            
+                           
                             <li class="nav-item">
                                 <Button disabled={isDisabled}>
                                     <Link to='/courses'> Courses</Link>
@@ -48,11 +63,7 @@ export default function Navbar() {
                                 </Link>
                                 </Button>
                             </li>
-                            <li class="nav-item">
-                                <Link to="/login">
-                                    <a class="nav-link active" aria-current="page" >Login</a>
-                                </Link>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>
