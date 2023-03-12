@@ -7,6 +7,7 @@ import {
   //Switch,
   Route,
   Routes,
+  useNavigate,
   //Link
 } from "react-router-dom";
 
@@ -22,6 +23,7 @@ import FilteredList from './components/CustomerPanel';
 import Courses from './components/Courses';
 import Vr from './components/Vr';
 import PanoramaViewer from './components/Vr';
+import Explore from './components/Explore';
 
 
 // import Landing from './components/Landing';
@@ -29,6 +31,7 @@ import PanoramaViewer from './components/Vr';
 
 
 function App() {
+  
   return (
     <Router>
       {/* <Navbar/>
@@ -38,6 +41,11 @@ function App() {
       {/* <Navbar/> */}
       <Routes>
         <Route path='/' element={<LandingPage/>} />
+      </Routes>
+      <Routes>
+        
+        {/* <Route path='/explore'element={<Navbar/>}></Route> */}
+        <Route path='/explore'element={<Explore/>}></Route>
       </Routes>
       <Routes>
         <Route path='/vr' element={<Vr/>}/>

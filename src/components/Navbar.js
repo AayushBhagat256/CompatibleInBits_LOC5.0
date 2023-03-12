@@ -29,6 +29,7 @@ export default function Navbar() {
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/cp">Connect with Photographer</a></li>
                                     <li><a class="dropdown-item" href="/vr">Virtual Reality</a></li>
+                                    <li><a class="dropdown-item" href="/explore">Explore</a></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><a class="dropdown-item" href="/photoprofile">Profile</a></li>
                                 </ul>
