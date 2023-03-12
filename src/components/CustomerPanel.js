@@ -15,13 +15,14 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import Button from '@mui/material/Button'
 import Navbar from './Navbar';
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import { display } from '@mui/system';
 import axios from 'axios';
 import Photoprofile from './Photoprofile';
 import { Link } from 'react-router-dom';
 
 function CustomerPanel() {
+  const [progress, setProgress] = useState(0);
   const [d,setD]=useState();
   const [domain, setDomain] = useState();
   document.addEventListener('contextmenu', event => event.preventDefault());
@@ -61,6 +62,21 @@ axios(config)
 });
 
   }
+  useEffect(
+    () => {
+      incrementProgress(90)
+      // incrementProgress2(65)
+      // incrementProgress3(85)
+      // incrementProgress4(50)
+      // incrementProgress5(75)
+      // incrementProgress6(60)
+    }, []
+  )
+  const incrementProgress = (e) => {
+    if (progress < 100) {
+      setProgress(e);
+    }
+  };
 
   return (
     <>
@@ -119,7 +135,12 @@ axios(config)
               {/* <IconButton aria-label="previous">
             {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
           </IconButton> */}
-
+              <div className="progress-bar">
+          <div
+            className="progress-bar-fill"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
               {/* <IconButton aria-label="play/pause">
             <PlayArrowIcon sx={{ height: 38, width: 38 }} />
           </IconButton> */}
@@ -137,6 +158,8 @@ axios(config)
         </Card>
       </div>
       </div>):(<div>ghhh</div>)}
+
+      
 
     </>
   )
